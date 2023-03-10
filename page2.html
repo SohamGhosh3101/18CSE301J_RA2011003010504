@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Python</title>
+	<style>
+		body {
+			font-family: 'Open Sans', sans-serif;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+		}
+		nav {
+		background-color: #333;
+		color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+	}
+		nav a{
+			display: inline-block;
+			padding: 10px;
+			margin: 0 10px;
+			transition: transform 0.3s;
+	}
+		nav a:hover {
+			transform: scale(1.1);
+		}
+		nav ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+	}
+
+	nav ul li {
+		margin: 0 10px;
+	}
+
+	nav ul li a {
+		color: #fff;
+		text-decoration: none;
+		font-size: 18px;
+	}
+
+		.container {
+			margin: 20px auto;
+			max-width: 800px;
+			padding: 0 20px;
+		}
+
+		h1 {
+			font-size: 36px;
+			margin-bottom: 20px;
+		}
+
+		p {
+			font-size: 18px;
+			line-height: 1.5;
+			margin-bottom: 20px;
+		}
+		img{
+			width: 300px;
+			height: auto;
+			transition: transform 0.3s;
+		}
+		img:hover{
+			transform: scale(1.1);
+		}
+
+		.btn {
+			background-color: #333;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		.btn:hover {
+			background-color: #555;
+		}
+	</style>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="page1.html">Tableau</a></li>
+			<li><a href="page2.html">Python</a></li>
+			<li><a href="page3.html">Gephi</a></li>
+			<li><a href="page4.html">D3</a></li>
+		</ul>
+	</nav>
+	<div class="container">
+		<h1>Python</h1>
+		<p>Here I have created a visualization of my data using Python. I created my work on Jupyter Notebook environment and imported various Python libraries to plot various graphs and charts.
+		</p>
+		<br>
+        <a href="Python GLC.html"><img src="Python.png" alt="Python"></a>
+		<br><br><br><br><br><br><br><br><br>
+		<button class="btn">Back</button>
+	</div>
+	<script>
+		const backBtn = document.querySelector('.btn');
+		backBtn.addEventListener('click', () => {
+			window.history.back();
+		});
+	</script>
+</body>
+</html>

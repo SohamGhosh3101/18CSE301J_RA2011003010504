@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tableau</title>
+	<style>
+		body {
+			font-family: 'Open Sans', sans-serif;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+		}
+		nav {
+		background-color: #333;
+		color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+	}
+		nav a{
+			display: inline-block;
+			padding: 10px;
+			margin: 0 10px;
+			transition: transform 0.3s;
+	}
+		nav a:hover {
+			transform: scale(1.1);
+		}
+		nav ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+	}
+
+	nav ul li {
+		margin: 0 10px;
+	}
+
+	nav ul li a {
+		color: #fff;
+		text-decoration: none;
+		font-size: 18px;
+	}
+
+		.container {
+			margin: 20px auto;
+			max-width: 800px;
+			padding: 0 20px;
+		}
+
+		h1 {
+			font-size: 36px;
+			margin-bottom: 20px;
+		}
+
+		p {
+			font-size: 18px;
+			line-height: 1.5;
+			margin-bottom: 20px;
+		}
+
+		.btn {
+			background-color: #333;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		.btn:hover {
+			background-color: #555;
+		}
+	</style>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="page1.html">Tableau</a></li>
+			<li><a href="page2.html">Python</a></li>
+			<li><a href="page3.html">Gephi</a></li>
+			<li><a href="page4.html">D3</a></li>
+		</ul>
+	</nav>
+	<div class="container">
+		<h1>Tableau</h1>
+		<p>Rainfall-Triggered Landslides and its impact on a Global scale</p>
+        <div class='tableauPlaceholder' id='viz1678452768893' style='position: relative'><noscript><a href='#'><img alt='The Distribution of Fatality and Injury Count ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;GL&#47;GLCVisualization&#47;Story1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='GLCVisualization&#47;Story1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;GL&#47;GLCVisualization&#47;Story1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1678452768893');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+<br>
+Follow this <a href="https://public.tableau.com/views/GLCVisualization/Story1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link">link</a> to view my Tableau public space.
+		<br><br>
+		<button class="btn">Back</button>
+	</div>
+	<script>
+		const backBtn = document.querySelector('.btn');
+		backBtn.addEventListener('click', () => {
+			window.history.back();
+		});
+	</script>
+</body>
+</html>

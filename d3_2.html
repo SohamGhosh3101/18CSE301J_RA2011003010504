@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Enlarged and Centered D3.js Example</title>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <style>
+      #my_dataviz svg {
+        width: 100%;
+        height: auto;
+        margin: auto;
+      }
+      .container {
+			margin: 20px auto;
+			max-width: 800px;
+			padding: 0 20px;
+      text-align: center;
+		}
+      .btn {
+			background-color: #333;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+      text-align: center;
+		}
+
+		.btn:hover {
+			background-color: #555;
+		}
+    </style>
+  </head>
+  <body>
+    <button onclick="update(data1)">Variable 1</button>
+    <button onclick="update(data2)">Variable 2</button>
+
+    <div id="my_dataviz"></div>
+
+    <script>
+      var data1 = [
+        {group: "A", value: 4},
+        {group: "B", value: 16},
+        {group: "C", value: 8}
+      ];
+
+      var data2 = [
+        {group: "A", value: 7},
+        {group: "B", value: 1},
+        {group: "C", value: 20}
+      ];
+
+      var margin = {top: 50, right: 50, bottom: 100, left: 80},
+          width = window.innerWidth - margin.left - margin.right,
+          height = window.innerHeight - margin.top - margin.bottom;
+
+      var svg = d3.select("#my_dataviz")
+        .append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+      var x = d3.scaleBand()
+        .range([0, width])
+        .domain(data1.map(function(d) { return d.group; }))
+        .padding(0.2);
+
+      svg.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x));
+
+      var y = d3.scaleLinear()
+        .domain([0, 20])
+        .range([height, 0]);
+
+      svg.append("g")
+        .attr("class", "myYaxis")
+        .call(d3.axisLeft(y));
+
+      function update(data) {
+        var u = svg.selectAll("rect")
+          .data(data);
+
+        u.enter()
+          .append("rect")
+          .merge(u)
+          .transition()
+          .duration(1000)
+            .attr("x", function(d) { return x(d.group); })
+            .attr("y", function(d) { return y(d.value); })
+            .attr("width", x.bandwidth())
+            .attr("height", function(d) { return height - y(d.value); })
+            .attr("fill", "#69b3a2");
+      }
+
+      update(data1);
+    </script>
+    <div class="container"><button class="btn">Back</button></div>
+    <script>
+      const backBtn = document.querySelector('.btn');
+      backBtn.addEventListener('click', () => {
+        window.history.back();
+      });
+    </script>
+  </body>
+</html>

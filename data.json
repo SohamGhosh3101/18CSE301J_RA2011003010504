@@ -1,0 +1,18 @@
+{
+    "name": "root",
+    "children": [
+      {
+        "name": "category1",
+        "value": 20
+      },
+      {
+        "name": "category2",
+        "value": 30
+      },
+      {
+        "name": "category3",
+        "value": 50
+      }
+    ]
+  }
+  

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>D3.js Example</title>
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <style>
+    /* Center the visualization */
+    #wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .container {
+			margin: 20px auto;
+			max-width: 800px;
+			padding: 0 20px;
+      text-align: center;
+		}
+    svg {
+      /* Enlarge the visualization to fit the page */
+      width: 100%;
+      height: 100%;
+    }
+    .btn {
+			background-color: #333;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+      text-align: center;
+		}
+
+		.btn:hover {
+			background-color: #555;
+		}
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div>
+      <select id="selectButton"></select>
+      <div id="my_dataviz"></div>
+    </div>
+  </div>
+  <script>
+    var margin = {top: 10, right: 100, bottom: 30, left: 30},
+        width = window.innerWidth * 0.8 - margin.left - margin.right,
+        height = window.innerHeight * 0.8 - margin.top - margin.bottom;
+
+    var svg = d3.select("#my_dataviz")
+      .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform",
+              "translate(" + margin.left + "," + margin.top + ")");
+
+    d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_connectedscatter.csv", function(data) {
+
+        var allGroup = ["valueA", "valueB", "valueC"]
+
+        d3.select("#selectButton")
+          .selectAll('myOptions')
+         	.data(allGroup)
+          .enter()
+        	.append('option')
+          .text(function (d) { return d; }) 
+          .attr("value", function (d) { return d; })
+
+        var myColor = d3.scaleOrdinal()
+          .domain(allGroup)
+          .range(d3.schemeSet2);
+
+        var x = d3.scaleLinear()
+          .domain([0,10])
+          .range([ 0, width ]);
+        svg.append("g")
+          .attr("transform", "translate(0," + height + ")")
+          .call(d3.axisBottom(x));
+
+        var y = d3.scaleLinear()
+          .domain( [0,20])
+          .range([ height, 0 ]);
+        svg.append("g")
+          .call(d3.axisLeft(y));
+
+        var line = svg
+          .append('g')
+          .append("path")
+            .datum(data)
+            .attr("d", d3.line()
+              .x(function(d) { return x(+d.time) })
+              .y(function(d) { return y(+d.valueA) })
+            )
+            .attr("stroke", function(d){ return myColor("valueA") })
+            .style("stroke-width", 4)
+            .style("fill", "none")
+
+        function update(selectedGroup) {
+
+          var dataFilter = data.map(function(d){return {time: d.time, value:d[selectedGroup]} })
+
+          line
+              .datum(dataFilter)
+              .transition()
+              .duration(1000)
+              .attr("d", d3.line()
+                .x(function(d) { return x(+d.time) })
+                .y(function(d) { return y(+d.value) })
+              )
+              .attr("stroke", function(d){ return myColor(selectedGroup) })
+    }
+
+    d3.select("#selectButton").on("change", function(d) {
+
+        var selectedOption = d3.select(this).property("value")
+
+        update(selectedOption)
+    })
+
+})
+
+
+</script>
+<style>
+  .btn {
+			background-color: #333;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+.btn:hover {
+  background-color: #555;
+}
+</style>
+<script>
+  const backBtns = document.querySelectorAll('.btn');
+  backBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      window.history.back();
+    });
+  });
+</script>
+<div class="container"><button class="btn">Back</button></div>
+
+<script>
+  const backBtn = document.querySelector('.btn');
+  backBtn.addEventListener('click', () => {
+    window.history.back();
+  });
+</script>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gephi</title>
+	<style>
+		body {
+			font-family: 'Open Sans', sans-serif;
+			margin: 0;
+			padding: 0;
+            text-align: center;
+		}
+        nav {
+		background-color: #333;
+		color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+	}
+		nav a{
+			display: inline-block;
+			padding: 10px;
+			margin: 0 10px;
+			transition: transform 0.3s;
+	}
+		nav a:hover {
+			transform: scale(1.1);
+		}
+		nav ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+	}
+
+	nav ul li {
+		margin: 0 10px;
+	}
+
+	nav ul li a {
+		color: #fff;
+		text-decoration: none;
+		font-size: 18px;
+	}
+
+		.container {
+			margin: 20px auto;
+			max-width: 800px;
+			padding: 0 20px;
+            text-align: center;
+        }
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #333;
+    
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="page1.html">Tableau</a></li>
+			<li><a href="page2.html">Python</a></li>
+			<li><a href="page3.html">Gephi</a></li>
+			<li><a href="page4.html">D3</a></li>
+		</ul>
+	</nav>
+<div class="container">
+    <h1>Gephi</h1>
+    <p>Here I have taken a two custom datasets segregated into nodes and edges. I have then used the two Gephi plugins such as <b>GeoLayout</b> and <b>Multimode Networks Transformation</b> along with the in built Gephi tools to construct two network visualizations. The visualization has 2 parts:</p>
+    <br><br>
+        
+    <img src="graph1.svg" alt="SVG 1" width="500" height="500"><br><br>
+    Part 1: 1-mode network (1.000 nodes/14.116 edges)
+    <br><br><br>
+    <img src="graph2.svg" alt="SVG 2" width="500" height="500"><br><br>
+    Part 2: 2-mode network (110 nodes/142 edges)
+    <br><br><button class="btn">Back</button>
+</div>
+<script>
+    const backBtn = document.querySelector('.btn');
+    backBtn.addEventListener('click', () => {
+        window.history.back();
+    });
+</script>
+</body>
+</html>
