@@ -1,22 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soham Ghosh</title>
+	<title>My Static Webpage</title>
+	<style>
+		body {
+			font-family: 'Open Sans', sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+        nav {
+		background-color: #333;
+		color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+	}
+		nav a{
+			display: inline-block;
+			padding: 10px;
+			margin: 0 10px;
+			transition: transform 0.3s;
+	}
+		nav a:hover {
+			transform: scale(1.1);
+		}
+		nav ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+	}
+
+	nav ul li {
+		margin: 0 10px;
+	}
+
+	nav ul li a {
+		color: #fff;
+		text-decoration: none;
+		font-size: 18px;
+	}
+
+	.container {
+			margin: 0 auto;
+			max-width: 800px;
+			padding: 20px;
+			text-align: center;
+		}
+
+		h1 {
+			font-size: 48px;
+			margin-bottom: 20px;
+		}
+		h2 {
+			font-size: 36px;
+			margin-bottom: 20px;
+		}
+
+	p {
+		font-size: 18px;
+		line-height: 1.5;
+		margin-bottom: 20px;
+	}
+	.bold-italic {
+			font-weight: bold;
+			font-style: italic;
+			font-size: 16px;
+			margin-top: 10px;
+		}
+		img{
+			width: 300px;
+			height: auto;
+			transition: transform 0.3s;
+		}
+		img:hover{
+			transform: scale(1.1);
+		}
+
+	.btn {
+		background-color: #333;
+		color: #fff;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
+
+	.btn:hover {
+		background-color: #555;
+	}
+    
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> <!-- Add this line to import the Open Sans font -->
 </head>
 <body>
-    
-  <center> <h1>18CSE301J INFORMATION VISUALIZATION</h1>
-    <h1>Soham Ghosh</h1>
-      <br>
-      <h2>RA2011003010504</h2>
-<br>
-<br>
-<div class='tableauPlaceholder' id='viz1677516076336' style='position: relative'><noscript><a href='#'><img alt='Representation of Indian Election Data ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;27&#47;27HRTTFDF&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;27HRTTFDF' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;27&#47;27HRTTFDF&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1677516076336');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-<br>
-Follow this <a href="https://public.tableau.com/shared/27HRTTFDF?:display_count=n&:origin=viz_share_link">link</a> to view my Tableau public space.
-</center> 
+	<nav>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="page1.html">Tableau</a></li>
+			<li><a href="page2.html">Python</a></li>
+			<li><a href="page3.html">Gephi</a></li>
+			<li><a href="page4.html">D3</a></li>
+		</ul>
+	</nav>
+	<div class="container">
+		<h1>Information Visualization</h1>
+		<h2>18CSE301J</h2>
+		<br><br>
+		<p><h2>Soham Ghosh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RA2011003010504</h2></p>
+		<br><br><br>
+		<p><h2>Introduction</h2></p>
+		<br>
+		<p>The Global Landslide Catalog (GLC) is developed with the goal of identifying rainfall-triggered
+			landslide events around the world, regardless of size, impacts or location. The GLC considers all
+			types of mass movements triggered by rainfall, which have been reported in the media, disaster
+			databases, scientific reports, or other sources. The GLC has been compiled since 2007 at NASA
+			Goddard Space Flight Center. This is a unique data set with the ID tag “GLC” in the landslide
+			editor.</p>
+			<br><br><br>
+		<p><h2>Why use this dataset?</h2></p>
+		<br>
+		<p>
+			The primary motivations for using this data-set is to approximate the spatial and temporal trends in
+			landslide occurrences on the global scale and to use the data to evaluate a preliminary global landslide
+			hazard algorithm. The catalog compiled for our study includes all landslide events that are
+			clearly triggered by rainfall conditions. The catalog considers considers all types of mass movements
+			triggered by rainfall (from shallow debris flows to deep seated complex rotational slides),
+			which have been reported in the media, disaster databases, scientific reports, or other sources.
+			<br><br><br>
+			<p><h2>My Contribution</h2></p>
+			<br>
+			<p>I have tried to visualize the dataset in multiple ways. I have used the following tools to visualize my data:
+				<br><br><br>
+				<a href="page1.html"><img src="Tableau.png" alt="Tableau"></a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="page2.html"><img src="Python.png" alt="Python"></a>
+					<br><br><br>
+				<a href="page3.html"><img src="Gephi.png" alt="Gephi"></a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="page4.html"><img src="D3.png" alt="D3"></a>
+				
+			</p>
+	</div>
+		
+		
+	<script>
+		const backBtns = document.querySelectorAll('.btn');
+		backBtns.forEach(btn => {
+			btn.addEventListener('click', () => {
+				window.history.back();
+			});
+		});
+	</script>
 </body>
 </html>
