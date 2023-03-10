@@ -22,14 +22,14 @@ Link: https://data.nasa.gov/Earth-Science/Global-Landslide-Catalog-Export/dd9e-w
 * D3 - [FreeCodeCamp D3 Tutorial](https://www.freecodecamp.org/news/d3js-tutorial-data-visualization-for-beginners/)
 * 
 ### Documentation
-To install the following, run the following commands in your terminal:  
+To install the following python modules, run the following commands in your terminal:  
 * **Matplotlib**  
 ```pip install matplotlib```
 * **Seaborn**  
 ```pip install Seaborn```
 * **Plotly**  
 ```pip install plotly```
-* **Pandas**
+* **Working with Pandas**
 ```    
 import pandas as pd    
 
