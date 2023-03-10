@@ -1,4 +1,4 @@
-# Rainfall-Triggered Global Landslide Catalog
+# Rainfall-Triggered Global Landslide Catalog (18CSE301J - Information Visualization)
 
 This is a catalog of global landslides triggered by rainfall. The data used for this project is sourced from the Global Landslide Catalog (NASA).
 
@@ -8,6 +8,7 @@ This is a catalog of global landslides triggered by rainfall. The data used for 
 * Dataset Used
 * References
 * Documentation
+* Credits
 
 ### Link for the website
 Link: https://sohamghosh3101.github.io/18CSE301J_RA2011003010504/
@@ -39,3 +40,5 @@ data = pd.read_csv("dataset_name.csv")
 # printing the top 10 rows    
 display(data.head(10))
 ````
+### Credits
+This project has been carried out under the guidance of Mr. Parthiban N (Assistant Professor, Department of Computing Technologies, SRM Institute of Science and Technology)
