@@ -23,14 +23,13 @@ Link: https://data.nasa.gov/Earth-Science/Global-Landslide-Catalog-Export/dd9e-w
 * 
 ### Documentation
 To install the following, run the following commands in your terminal:  
-* **Matplotlib**
+* **Matplotlib**  
 ```pip install matplotlib```
-* **Seaborn**
+* **Seaborn**  
 ```pip install Seaborn```
-* **Plotly**
+* **Plotly**  
 ```pip install plotly```
 * **Pandas**
-
 ```    
 import pandas as pd    
 
